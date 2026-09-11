@@ -11,8 +11,6 @@ export default function Technologies() {
     setLoading(false);
   }, []);
 
-  
-
   const addToStack = (tech) => {
     const already = stack.find(t => t.id === tech.id);
     if (already) {
@@ -36,90 +34,82 @@ export default function Technologies() {
 
   return (
     <section style={{width: '90%', maxWidth: '1200px', margin: '0 auto', padding: '40px 0'}}>
-    
-      
-      {/* Section Heading */}
+
       <h2 style={{fontSize: '32px', fontWeight: '700', marginBottom: '8px', textAlign: 'center'}}>
-  Explore the{' '}
-  <span style={{
-    background: 'linear-gradient(90deg, #ff8c00, #ff1493, #8b00ff)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent'
-  }}>Technologies</span>
-</h2>
-<p style={{color: '#888', marginBottom: '32px', textAlign: 'center'}}>Pick one technology per category to build your ideal stack.</p>
-      {/* Main Layout */}
-      <div style={{display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap'}}>
-        
-        {/* Cards Grid */}
-       <div style={{
-          flex: 1,
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-          gap: '20px'
-        }}>
-          {technologies.map(tech => (
-            <div key={tech.id} style={{
-              border: '1px solid #eee',
-              borderRadius: '12px',
-              padding: '20px',
-              background: 'white',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
-            }}>
-              {/* Badge */}
-              <span style={{
-                background: '#fff0f5',
-                color: 'deeppink',
-                fontSize: '11px',
-                fontWeight: '600',
-                padding: '3px 10px',
-                borderRadius: '20px'
-              }}>{tech.badge}</span>
+        Explore the{' '}
+        <span style={{
+          background: 'linear-gradient(90deg, #ff8c00, #ff1493, #8b00ff)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent'
+        }}>Technologies</span>
+      </h2>
+      <p style={{color: '#888', marginBottom: '32px', textAlign: 'center'}}>
+        Pick one technology per category to build your ideal stack.
+      </p>
 
-              {/* Icon & Name */}
-              <div style={{display: 'flex', alignItems: 'center', gap: '10px', margin: '12px 0'}}>
-                <img src={tech.icon} alt={tech.name} style={{width: '36px', height: '36px'}} />
-                <h3 style={{fontSize: '16px', fontWeight: '700'}}>{tech.name}</h3>
+      <div className="tech-layout">
+
+        <div className="tech-grid">
+          {technologies.map(tech => {
+            const isAdded = stack.some(t => t.id === tech.id);
+            return (
+              <div key={tech.id} style={{
+                border: isAdded ? '2px solid deeppink' : '1px solid #eee',
+                borderRadius: '12px',
+                padding: '20px',
+                background: 'white',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '10px'
+              }}>
+                <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
+                  <img src={tech.icon} alt={tech.name} style={{width: '40px', height: '40px'}} />
+                  <span style={{
+                    background: '#fff0f5',
+                    color: 'deeppink',
+                    fontSize: '11px',
+                    fontWeight: '600',
+                    padding: '3px 10px',
+                    borderRadius: '20px'
+                  }}>{tech.badge}</span>
+                </div>
+
+                <h3 style={{fontSize: '16px', fontWeight: '700', margin: 0}}>{tech.name}</h3>
+
+                <p style={{fontSize: '13px', color: '#666', lineHeight: '1.5', margin: 0}}>{tech.description}</p>
+
+                <div style={{display: 'flex', gap: '8px', flexWrap: 'wrap'}}>
+                  <span style={{background: '#f3f4f6', color: '#555', fontSize: '11px', padding: '3px 10px', borderRadius: '20px'}}>{tech.category}</span>
+                  <span style={{background: '#f3f4f6', color: '#555', fontSize: '11px', padding: '3px 10px', borderRadius: '20px'}}>{tech.difficulty}</span>
+                </div>
+
+                <div style={{fontSize: '13px', color: '#666'}}>⭐ {tech.rating}</div>
+
+                <button
+                  onClick={() => addToStack(tech)}
+                  disabled={isAdded}
+                  style={{
+                    width: '100%',
+                    padding: '10px',
+                    borderRadius: '8px',
+                    border: 'none',
+                    background: isAdded ? '#fff0f5' : '#111',
+                    color: isAdded ? 'deeppink' : 'white',
+                    fontSize: '13px',
+                    fontWeight: '600',
+                    cursor: isAdded ? 'not-allowed' : 'pointer',
+                    marginTop: 'auto'
+                  }}
+                >
+                  {isAdded ? '✓ Added to Stack' : 'Add to Stack'}
+                </button>
               </div>
-
-              {/* Description */}
-              <p style={{fontSize: '13px', color: '#666', lineHeight: '1.5', marginBottom: '12px'}}>{tech.description}</p>
-
-              {/* Category & Difficulty */}
-              <div style={{display: 'flex', gap: '8px', marginBottom: '12px', flexWrap: 'wrap'}}>
-                <span style={{background: '#f3f4f6', color: '#555', fontSize: '11px', padding: '3px 10px', borderRadius: '20px'}}>{tech.category}</span>
-                <span style={{background: '#f3f4f6', color: '#555', fontSize: '11px', padding: '3px 10px', borderRadius: '20px'}}>{tech.difficulty}</span>
-              </div>
-
-              {/* Rating */}
-              <div style={{fontSize: '13px', color: '#666', marginBottom: '14px'}}>⭐ {tech.rating}</div>
-
-              {/* Add to Stack Button */}
-              <button
-                onClick={() => addToStack(tech)}
-                disabled={stack.find(t => t.id === tech.id)}
-                style={{
-                  width: '100%',
-                  padding: '10px',
-                  borderRadius: '8px',
-                  border: 'none',
-                  background: stack.find(t => t.id === tech.id) ? '#e5e7eb' : '#111',
-                  color: stack.find(t => t.id === tech.id) ? '#999' : 'white',
-                  fontSize: '13px',
-                  fontWeight: '600',
-                  cursor: stack.find(t => t.id === tech.id) ? 'not-allowed' : 'pointer'
-                }}
-              >
-                {stack.find(t => t.id === tech.id) ? '✓ Added to Stack' : 'Add to Stack'}
-              </button>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Your Stack Sidebar */}
-        <div style={{
-          width: '100%',
-          minWidth: '260px',
+        <div className="stack-sidebar" style={{
           border: '1px solid #eee',
           borderRadius: '12px',
           padding: '20px',
@@ -132,7 +122,9 @@ export default function Technologies() {
           <p style={{fontSize: '13px', color: '#888', marginBottom: '16px'}}>{stack.length} Technology Selected</p>
 
           {stack.length === 0 ? (
-            <p style={{color: '#bbb', fontSize: '13px', textAlign: 'center', padding: '20px 0'}}>No technologies added yet.</p>
+            <p style={{color: '#bbb', fontSize: '13px', textAlign: 'center', padding: '20px 0'}}>
+              No technologies added yet.
+            </p>
           ) : (
             <>
               {stack.map(tech => (

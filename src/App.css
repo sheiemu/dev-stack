@@ -127,3 +127,43 @@ body {
     font-weight: 500;
   }
 }
+
+/* ===== TECHNOLOGIES RESPONSIVE ===== */
+.tech-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.tech-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stack-sidebar {
+  width: 260px;
+  min-width: 260px;
+}
+
+@media (max-width: 1024px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-layout {
+    flex-direction: column !important;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .stack-sidebar {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+}
