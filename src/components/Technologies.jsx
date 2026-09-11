@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import techData from "../data/technologies.json";
-
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function Technologies() {
   const [technologies, setTechnologies] = useState([]);
   const [stack, setStack] = useState([]);
@@ -14,18 +15,21 @@ export default function Technologies() {
   const addToStack = (tech) => {
     const already = stack.find(t => t.id === tech.id);
     if (already) {
-      alert('Already in your stack!');
+      toast.warn('Already in your stack!', { position: 'bottom-right' });
       return;
     }
     setStack([...stack, tech]);
+    toast.success(`${tech.name} added to stack!`, { position: 'bottom-right' });
   };
 
-  const removeFromStack = (id) => {
+ const removeFromStack = (id) => {
     setStack(stack.filter(t => t.id !== id));
+    toast.error('Removed from stack!', { position: 'bottom-right' });
   };
 
   const removeAll = () => {
     setStack([]);
+    toast.error('Stack cleared!', { position: 'bottom-right' });
   };
 
   if (loading) {
@@ -128,7 +132,15 @@ export default function Technologies() {
           ) : (
             <>
               {stack.map(tech => (
-                <div key={tech.id} style={{
+                <div key={tech.id} className="tech-card"
+                nMouseEnter={e => {
+    e.currentTarget.style.transform = 'translateY(-4px)';
+    e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)';
+  }}
+  onMouseLeave={e => {
+    e.currentTarget.style.transform = 'translateY(0)';
+    e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)';
+  }} style={{
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
@@ -169,6 +181,7 @@ export default function Technologies() {
         </div>
 
       </div>
+         <ToastContainer />
     </section>
   );
 }
