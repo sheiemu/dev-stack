@@ -1,0 +1,122 @@
+[
+  {
+    "id": "react",
+    "name": "React",
+    "category": "Frontend",
+    "description": "A declarative, component-based JavaScript library for building modern user interfaces.",
+    "icon": "https://icon.icepanel.io/Technology/svg/React.svg",
+    "rating": 4.9,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Popular"
+  },
+  {
+    "id": "vuejs",
+    "name": "Vue.js",
+    "category": "Frontend",
+    "description": "An approachable, performant and versatile framework for building web user interfaces.",
+    "icon": "https://icon.icepanel.io/Technology/svg/Vue.js.svg",
+    "rating": 4.7,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Trending"
+  },
+  {
+    "id": "svelte",
+    "name": "Svelte",
+    "category": "Frontend",
+    "description": "A radical new approach to building user interfaces that compiles to vanilla JS.",
+    "icon": "https://icon.icepanel.io/Technology/svg/Svelte.svg",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "badge": "Fast"
+  },
+  {
+    "id": "nextjs",
+    "name": "Next.js",
+    "category": "Frontend",
+    "description": "The React framework for production — supports SSR, SSG, and full-stack features.",
+    "icon": "https://icon.icepanel.io/Technology/svg/Next.js.svg",
+    "rating": 4.9,
+    "difficulty": "Intermediate",
+    "badge": "Essential"
+  },
+  {
+    "id": "nodejs",
+    "name": "Node.js",
+    "category": "Backend",
+    "description": "A JavaScript runtime that lets you run JS on the server side with high performance.",
+    "icon": "https://icon.icepanel.io/Technology/svg/Node.js.svg",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "badge": "Standard"
+  },
+  {
+    "id": "postgresql",
+    "name": "PostgreSQL",
+    "category": "Database",
+    "description": "A powerful, open-source object-relational database system with proven reliability.",
+    "icon": "https://icon.icepanel.io/Technology/svg/PostgresSQL.svg",
+    "rating": 4.9,
+    "difficulty": "Intermediate",
+    "badge": "Top SQL"
+  },
+  {
+    "id": "redis",
+    "name": "Redis",
+    "category": "Database",
+    "description": "An in-memory data structure store used as a database, cache, and message broker.",
+    "icon": "https://icon.icepanel.io/Technology/svg/Redis.svg",
+    "rating": 4.7,
+    "difficulty": "Intermediate",
+    "badge": "Cache"
+  },
+  {
+    "id": "javascript",
+    "name": "JavaScript",
+    "category": "Language",
+    "description": "The versatile scripting language that powers the web — frontend and backend alike.",
+    "icon": "https://icon.icepanel.io/Technology/svg/JavaScript.svg",
+    "rating": 4.8,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Ubiquitous"
+  },
+  {
+    "id": "typescript",
+    "name": "TypeScript",
+    "category": "Language",
+    "description": "A strongly typed superset of JavaScript that compiles to plain JS for safer code.",
+    "icon": "https://icon.icepanel.io/Technology/svg/TypeScript.svg",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "badge": "Essential"
+  },
+  {
+    "id": "tailwindcss",
+    "name": "Tailwind CSS",
+    "category": "Styling",
+    "description": "A utility-first CSS framework packed with classes to build any design directly in markup.",
+    "icon": "https://icon.icepanel.io/Technology/svg/Tailwind-CSS.svg",
+    "rating": 4.9,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Popular"
+  },
+  {
+    "id": "docker",
+    "name": "Docker",
+    "category": "DevOps",
+    "description": "A platform to build, share, and run containerized applications anywhere consistently.",
+    "icon": "https://icon.icepanel.io/Technology/svg/Docker.svg",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "badge": "Containers"
+  },
+  {
+    "id": "java",
+    "name": "Java",
+    "category": "Language",
+    "description": "A versatile, object-oriented programming language known for portability and performance.",
+    "icon": "https://icon.icepanel.io/Technology/svg/Java.svg",
+    "rating": 4.6,
+    "difficulty": "Intermediate",
+    "badge": "Robust"
+  }
+]
