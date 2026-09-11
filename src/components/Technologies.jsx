@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import techData from "../data/technologies.json";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 export default function Technologies() {
   const [technologies, setTechnologies] = useState([]);
   const [stack, setStack] = useState([]);
@@ -22,7 +23,7 @@ export default function Technologies() {
     toast.success(`${tech.name} added to stack!`, { position: 'bottom-right' });
   };
 
- const removeFromStack = (id) => {
+  const removeFromStack = (id) => {
     setStack(stack.filter(t => t.id !== id));
     toast.error('Removed from stack!', { position: 'bottom-right' });
   };
@@ -57,16 +58,28 @@ export default function Technologies() {
           {technologies.map(tech => {
             const isAdded = stack.some(t => t.id === tech.id);
             return (
-              <div key={tech.id} style={{
-                border: isAdded ? '2px solid deeppink' : '1px solid #eee',
-                borderRadius: '12px',
-                padding: '20px',
-                background: 'white',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '10px'
-              }}>
+              <div key={tech.id} className="tech-card"
+                onMouseEnter={e => {
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.15)';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.transform = 'translateY(0px)';
+                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)';
+                }}
+                style={{
+                  border: isAdded ? '2px solid deeppink' : '1px solid #eee',
+                  borderRadius: '12px',
+                  padding: '20px',
+                  background: 'white',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '10px',
+                  transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                  willChange: 'transform'
+                }}>
+
                 <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
                   <img src={tech.icon} alt={tech.name} style={{width: '40px', height: '40px'}} />
                   <span style={{
@@ -132,15 +145,7 @@ export default function Technologies() {
           ) : (
             <>
               {stack.map(tech => (
-                <div key={tech.id} className="tech-card"
-                nMouseEnter={e => {
-    e.currentTarget.style.transform = 'translateY(-4px)';
-    e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)';
-  }}
-  onMouseLeave={e => {
-    e.currentTarget.style.transform = 'translateY(0)';
-    e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)';
-  }} style={{
+                <div key={tech.id} style={{
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
@@ -181,7 +186,7 @@ export default function Technologies() {
         </div>
 
       </div>
-         <ToastContainer />
+      <ToastContainer />
     </section>
   );
 }
