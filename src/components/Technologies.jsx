@@ -39,24 +39,23 @@ export default function Technologies() {
     
       
       {/* Section Heading */}
-      <h2 style={{fontSize: '32px', fontWeight: '700', marginBottom: '8px'}}>
-        Explore the{' '}
-        <span style={{
-          background: 'linear-gradient(90deg, #ff8c00, #ff1493, #8b00ff)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent'
-        }}>Technologies</span>
-      </h2>
-      <p style={{color: '#888', marginBottom: '32px'}}>Pick one technology per category to build your ideal stack.</p>
-
+      <h2 style={{fontSize: '32px', fontWeight: '700', marginBottom: '8px', textAlign: 'center'}}>
+  Explore the{' '}
+  <span style={{
+    background: 'linear-gradient(90deg, #ff8c00, #ff1493, #8b00ff)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent'
+  }}>Technologies</span>
+</h2>
+<p style={{color: '#888', marginBottom: '32px', textAlign: 'center'}}>Pick one technology per category to build your ideal stack.</p>
       {/* Main Layout */}
-      <div style={{display: 'flex', gap: '24px', alignItems: 'flex-start'}}>
+      <div style={{display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap'}}>
         
         {/* Cards Grid */}
-        <div style={{
+       <div style={{
           flex: 1,
           display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
           gap: '20px'
         }}>
           {technologies.map(tech => (
@@ -119,7 +118,7 @@ export default function Technologies() {
 
         {/* Your Stack Sidebar */}
         <div style={{
-          width: '260px',
+          width: '100%',
           minWidth: '260px',
           border: '1px solid #eee',
           borderRadius: '12px',
