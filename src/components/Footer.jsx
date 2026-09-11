@@ -3,7 +3,7 @@ export default function Footer() {
     <footer style={{background: '#fff', color: '#444', marginTop: '80px', borderTop: '1px solid #eee'}}>
       
       {/* Main Footer */}
-      <div style={{
+      <div className="footer-main" style={{
         width: '90%',
         maxWidth: '1200px',
         margin: '0 auto',
@@ -14,23 +14,24 @@ export default function Footer() {
       }}>
 
         {/* Brand Block */}
-        <div style={{flex: 2, minWidth: '200px'}}>
+        <div style={{flex: 2, minWidth: '200px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'}}>
           <div style={{display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px'}}>
             <img src="/logo-text.png" alt="Dev Stack" style={{width: '100px', height: 'auto'}} />
           </div>
           <p style={{fontSize: '13px', lineHeight: '1.7', color: '#888', maxWidth: '260px'}}>
             Curated tools, technologies, and resources for developers building modern software.
           </p>
-          {/* Social Links */}
-          <div style={{display: 'flex', gap: '16px', marginTop: '20px'}}>
+          <div className="footer-social" style={{display: 'flex', gap: '16px', marginTop: '20px', alignItems: 'center', justifyContent: 'center'}}>
             <a href="#" style={{color: '#444', textDecoration: 'none', fontSize: '13px', fontWeight: '600'}}>GitHub</a>
+            <span style={{color: '#888'}}>•</span>
             <a href="#" style={{color: '#444', textDecoration: 'none', fontSize: '13px', fontWeight: '600'}}>Twitter</a>
+            <span style={{color: '#888'}}>•</span>
             <a href="#" style={{color: '#444', textDecoration: 'none', fontSize: '13px', fontWeight: '600'}}>LinkedIn</a>
           </div>
         </div>
 
         {/* Product Links */}
-        <div style={{flex: 1, minWidth: '120px'}}>
+        <div className="footer-links" style={{flex: 1, minWidth: '120px'}}>
           <h4 style={{color: '#111', fontSize: '12px', fontWeight: '700', marginBottom: '16px', letterSpacing: '1px', textTransform: 'uppercase'}}>Product</h4>
           <div style={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
             <a href="#" style={{color: '#888', textDecoration: 'none', fontSize: '13px'}}>Home</a>
@@ -40,7 +41,7 @@ export default function Footer() {
         </div>
 
         {/* Company Links */}
-        <div style={{flex: 1, minWidth: '120px'}}>
+        <div className="footer-links" style={{flex: 1, minWidth: '120px'}}>
           <h4 style={{color: '#111', fontSize: '12px', fontWeight: '700', marginBottom: '16px', letterSpacing: '1px', textTransform: 'uppercase'}}>Company</h4>
           <div style={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
             <a href="#" style={{color: '#888', textDecoration: 'none', fontSize: '13px'}}>About</a>
@@ -50,7 +51,7 @@ export default function Footer() {
         </div>
 
         {/* Legal Links */}
-        <div style={{flex: 1, minWidth: '120px'}}>
+        <div className="footer-links" style={{flex: 1, minWidth: '120px'}}>
           <h4 style={{color: '#111', fontSize: '12px', fontWeight: '700', marginBottom: '16px', letterSpacing: '1px', textTransform: 'uppercase'}}>Legal</h4>
           <div style={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
             <a href="#" style={{color: '#888', textDecoration: 'none', fontSize: '13px'}}>Privacy Policy</a>

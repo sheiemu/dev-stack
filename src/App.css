@@ -167,3 +167,31 @@ body {
     min-width: unset !important;
   }
 }
+
+.tech-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.tech-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+}
+
+/* ===== FOOTER RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .footer-main {
+    flex-direction: column !important;
+    gap: 30px !important;
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center !important;
+  }
+}
+@media (max-width: 768px) {
+  .footer-links {
+    display: none !important;
+  }
+}
