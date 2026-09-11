@@ -30,16 +30,6 @@
     "badge": "Fast"
   },
   {
-    "id": "nextjs",
-    "name": "Next.js",
-    "category": "Frontend",
-    "description": "The React framework for production — supports SSR, SSG, and full-stack features.",
-    "icon": "https://icon.icepanel.io/Technology/svg/Next.js.svg",
-    "rating": 4.9,
-    "difficulty": "Intermediate",
-    "badge": "Essential"
-  },
-  {
     "id": "nodejs",
     "name": "Node.js",
     "category": "Backend",
@@ -73,7 +63,7 @@
     "id": "javascript",
     "name": "JavaScript",
     "category": "Language",
-    "description": "The versatile scripting language that powers the web — frontend and backend alike.",
+    "description": "The versatile scripting language that powers the web, both frontend and backend alike.",
     "icon": "https://icon.icepanel.io/Technology/svg/JavaScript.svg",
     "rating": 4.8,
     "difficulty": "Beginner-Friendly",
@@ -118,5 +108,15 @@
     "rating": 4.6,
     "difficulty": "Intermediate",
     "badge": "Robust"
+  },
+  {
+    "id": "git",
+    "name": "Git",
+    "category": "Tools",
+    "description": "A free and open-source distributed version control system for tracking code changes.",
+    "icon": "https://icon.icepanel.io/Technology/svg/Git.svg",
+    "rating": 4.9,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Essential"
   }
 ]

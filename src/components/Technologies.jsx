@@ -9,10 +9,11 @@ export default function Technologies() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTechnologies(techData);
-    setLoading(false);
+    setTimeout(() => {
+      setTechnologies(techData);
+      setLoading(false);
+    }, 800);
   }, []);
-
   const addToStack = (tech) => {
     const already = stack.find(t => t.id === tech.id);
     if (already) {
